@@ -11,5 +11,7 @@
 #include <fcntl.h>
 
 void printAR(const char *input);
+void exec(char *inputStr);
+
 
 #endif
