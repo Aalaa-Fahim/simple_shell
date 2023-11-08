@@ -7,15 +7,13 @@ void prompt()
 
 int main()
 {
-	size_t buf = 0;
-	char *u_input = NULL;
+	char u_input[1024];
 
 	while (1)
     	{
-        	prompt();
-        	input(&u_input, &buf);
+		prompt();
+        	input(u_input, sizeof(u_input));
         	exec(u_input);
-		free(u_input);
 	}
 	return 0;
 }
