@@ -1,33 +1,33 @@
 #include "main.h"
+
 /**
  * exec - function to execute input.
- * @inputStr: input.
- * Return: void function.
-*/
-void exec(char *inputStr)
+ * @inputStr: input string.
+ */
+void exec(char *u_input)
 {
 	char *argv[1024];
-	int status, argv_counter = 0;
+	int status, argc = 0;
 	char *text;
-	pid_t child_process;
+	pid_t child_process = fork();
 
-	child_process = fork();
 	if (child_process == -1)
 	{
-		ARprint("Error:\n");
+		perror("fork");
 		exit(EXIT_FAILURE);
 	}
 	else if (child_process == 0)
 	{
-		text = strtok((char *)inputStr, " ");
+		text = strtok((char *)u_input, " ");
 		while (text != NULL)
 		{
-			argv[argv_counter++] = text;
+			argv[argc++] = text;
 			text = strtok(NULL, " ");
 		}
-		argv[argv_counter] = NULL;
+		argv[argc] = NULL;
 		execvp(argv[0], argv);
-		ARprint("Error Executing command.\n");
+		/* ARprint("Error Executing command.\n"); */
+		 perror("execvp");
 		exit(EXIT_FAILURE);
 	}
 	else
@@ -37,5 +37,3 @@ void exec(char *inputStr)
 		}while (!WIFEXITED(status) && !WIFSIGNALED(status));
 	}
 }
-
-
