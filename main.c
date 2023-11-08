@@ -2,20 +2,20 @@
 
 void prompt()
 {
-    printf("simple_shell$ ");
+	printf("($) ");
 }
 
 int main()
 {
-    size_t buf = 0;
-    char *u_input = NULL;
+	size_t buf = 0;
+	char *u_input = NULL;
 
-    while (1)
-    {
-        prompt();
-        input(&u_input, &buf);
-        exec(u_input);
-    }
-    free(u_input);
-    return 0;
+	while (1)
+    	{
+        	prompt();
+        	input(&u_input, &buf);
+        	exec(u_input);
+		free(u_input);
+	}
+	return 0;
 }
