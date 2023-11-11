@@ -10,6 +10,8 @@
 /* #include <sys/type.h> */
 #include <fcntl.h>
 
+extern char **environ;
+void printEnv(void);
 void printAR(const char *input);
 void input(char *u_input, size_t buf);
 void exec(char *u_input);

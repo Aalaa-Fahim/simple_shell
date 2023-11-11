@@ -1,5 +1,9 @@
 #include "main.h"
-/***/
+/**
+ * search - function to find path of commands.
+ * tmp_cmd: input string command.
+ * Return: pointer to command
+ */
 char *search(char *tmp_cmd)
 {
 	struct stat b;
