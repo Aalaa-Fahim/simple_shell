@@ -10,7 +10,7 @@ void input(char *u_input, size_t buf)
 	{
 		exit(EXIT_SUCCESS);
 	}
-	else if (strcmp(u_input, "env") == 0)
+	if (strcmp(u_input, "env") == 0)
 	{
 		printEnv();
 		exit(EXIT_SUCCESS);
