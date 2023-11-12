@@ -18,6 +18,9 @@ void exec(char *u_input)
 		argc++;
 	}
 	argv[argc] = NULL;
+	if (strcmp(argv[0], "exit") == 0)
+	exit(0);
+
 	child_process = fork();
 	if (child_process == -1)
 	{
@@ -28,9 +31,10 @@ void exec(char *u_input)
 	{
 		tmp_cmd = argv[0];
 		last_cmd = search(tmp_cmd);
-		if (execve(last_cmd, argv, environ) == -1)
-			printf("No such file or directory");
-                exit(0);
+		if (execve(last_cmd, argv, environ) == -1){
+		fprintf(stderr, "No such file or directory\n");
+		exit(EXIT_FAILURE);
+		}
 	}
     else
     {
