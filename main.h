@@ -7,7 +7,7 @@
 #include <unistd.h>
 #include <sys/stat.h>
 #include <sys/wait.h>
-/* #include <sys/type.h> */
+#include <stddef.h>
 #include <fcntl.h>
 
 extern char **environ;
@@ -16,6 +16,7 @@ void printAR(const char *input);
 void input(char *u_input, size_t buf);
 void exec(char *u_input);
 void prompt();
+void non_interactive_mode();
 char *search(char *tmp_cmd);
 
 #endif
