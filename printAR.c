@@ -7,5 +7,6 @@
 void printAR(const char *input)
 {
 	int len = strlen(input);
+
 	write(STDOUT_FILENO, input, len);
 }

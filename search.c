@@ -1,7 +1,8 @@
 #include "main.h"
+
 /**
  * search - function to find path of commands.
- * tmp_cmd: input string command.
+ * @tmp_cmd: input string command.
  * Return: pointer to command
  */
 char *search(char *tmp_cmd)
@@ -14,7 +15,7 @@ char *search(char *tmp_cmd)
 	{
 		oldPth_dup = strdup(oldPth);
 		token = strtok(oldPth_dup, ":");
-		while(token != NULL)
+		while (token != NULL)
 		{
 			newPth = malloc(sizeof(char *) * 1024);
 			strcpy(newPth, token);

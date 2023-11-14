@@ -3,10 +3,11 @@
 /**
  * input - Check the user input.
  * @u_input: the received user input.
+ * @buf: the buffer size.
  */
 void input(char *u_input, size_t buf)
 {
-	if(strcmp(u_input, "exit") == 0)
+	if (strcmp(u_input, "exit") == 0)
 	{
 		exit(EXIT_SUCCESS);
 	}

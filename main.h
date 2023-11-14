@@ -15,8 +15,8 @@ void printEnv(void);
 void printAR(const char *input);
 void input(char *u_input, size_t buf);
 void exec(char *u_input);
-void prompt();
-void non_interactive_mode();
+void prompt(void);
+void non_interactive_mode(char *u_input);
 char *search(char *tmp_cmd);
 
 #endif
