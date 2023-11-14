@@ -34,8 +34,9 @@ void exec(char *u_input)
 		last_cmd = search(tmp_cmd);
 		if (execve(last_cmd, argv, environ) == -1)
 		{
-		fprintf(stderr, "No such file or directory\n");
-		exit(EXIT_FAILURE);
+			fprintf(stderr, "%s: ", argv[0]);
+			fprintf(stderr, "No such file or directory\n");
+			exit(EXIT_FAILURE);
 		}
 	}
 	else

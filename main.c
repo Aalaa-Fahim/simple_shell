@@ -29,6 +29,6 @@ int main(void)
 			exec(u_input);
 		}
 	} else
-		non_interactive_mode(u_input);
+		non_interactive_mode();
 return (0);
 }
