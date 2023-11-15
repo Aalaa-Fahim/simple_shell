@@ -17,7 +17,7 @@ char *search(char *tmp_cmd)
 		token = strtok(oldPth_dup, ":");
 		while (token != NULL)
 		{
-			newPth = malloc(sizeof(char *) * 120);
+			newPth = malloc(sizeof(char *) * 1024);
 			if (newPth == NULL)
 			{
 				free(newPth);
