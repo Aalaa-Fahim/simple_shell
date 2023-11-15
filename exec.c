@@ -36,6 +36,7 @@ void exec(char *u_input)
 		{
 			fprintf(stderr, "%s: ", argv[0]);
 			fprintf(stderr, "No such file or directory\n");
+			free(argv);
 			exit(EXIT_FAILURE);
 		}
 	}

@@ -18,6 +18,11 @@ char *search(char *tmp_cmd)
 		while (token != NULL)
 		{
 			newPth = malloc(sizeof(char *) * 120);
+			if (newPth == NULL)
+			{
+				free(newPth);
+				return (NULL);
+			}
 			strcpy(newPth, token);
 			strcat(newPth, "/");
 			strcat(newPth, tmp_cmd);
