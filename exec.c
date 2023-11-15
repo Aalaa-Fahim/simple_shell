@@ -1,5 +1,4 @@
 #include "main.h"
-
 /**
  * exec - function to execute input.
  * @u_input: the user input string.
@@ -11,7 +10,7 @@ void exec(char *u_input)
 	char *text, **argv, *tmp_cmd = NULL, *last_cmd = NULL;
 
 	text = strtok(u_input, " ");
-	argv = malloc(sizeof(char *) * 100);
+	argv = malloc(sizeof(char *) * 1024);
 	while (text != NULL)
 	{
 		argv[argc] = text;
@@ -20,8 +19,10 @@ void exec(char *u_input)
 	}
 	argv[argc] = NULL;
 	if (strcmp(argv[0], "exit") == 0)
-	exit(0);
-
+	{
+		free(argv);
+		exit(0);
+	}
 	child_process = fork();
 	if (child_process == -1)
 	{

@@ -14,7 +14,7 @@ void prompt(void)
  */
 int main(void)
 {
-	char u_input[100];
+	char u_input[1024];
 
 	if (isatty(STDIN_FILENO))
 	{
@@ -28,7 +28,7 @@ int main(void)
 				continue;
 			exec(u_input);
 		}
-	} 
+	}
 	else
 	{
 		non_interactive_mode();
