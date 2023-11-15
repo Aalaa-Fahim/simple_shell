@@ -29,4 +29,5 @@ void non_interactive_mode(void)
 			exit(EXIT_FAILURE);
 		}
 	}
+	free(u_input);
 }

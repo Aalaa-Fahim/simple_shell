@@ -30,11 +30,11 @@ char *search(char *tmp_cmd)
 			token = strtok(NULL, ":");
 		}
 		free(oldPth_dup);
-		free(newPth);
 	}
 	if (stat(tmp_cmd, &b) == 0)
 	{
 		return (tmp_cmd);
 	}
+	free(newPth);
 	return (NULL);
 }

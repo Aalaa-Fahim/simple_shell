@@ -27,4 +27,5 @@ void input(char *u_input, size_t buf)
 		}
 	}
 	u_input[strcspn(u_input, "\n")] = '\0';
+	free(u_input);
 }
