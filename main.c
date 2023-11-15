@@ -23,8 +23,8 @@ int main(void)
 			prompt();
 				if (fgets(u_input, sizeof(u_input), stdin) == NULL)
 				{
-				printf("\n");
-				break;
+					printf("\n");
+					break;
 				}
 			u_input[strcspn(u_input, "\n")] = '\0';
 				if (strlen(u_input) == 0)

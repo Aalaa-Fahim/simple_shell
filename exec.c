@@ -45,6 +45,11 @@ void exec(char *u_input)
 	do {
 		waitpid(child_process, &status, WUNTRACED);
 		} while (!WIFEXITED(status) && !WIFSIGNALED(status));
+		if (status != 0)
+		{
+			printf("Command failed with status: %d\n", status);
+			exit(status);
+		}
 	}
 	free(argv);
 }
