@@ -11,15 +11,16 @@ void non_interactive_mode(void)
 
 	while ((read = getline(&u_input, &buf, stdin)) != -1)
 	{
-		u_input[read - 1] = '\0';
-		exec(u_input);
+		char *new_u_input = strndup(u_input, read - 1);
+
+		exec(new_u_input);
+		free(new_u_input);
 	}
 	if (read == -1)
 	{
 		if (feof(stdin))
 		{
 			free(u_input);
-			printf("\n");
 			exit(EXIT_SUCCESS);
 		}
 		else
