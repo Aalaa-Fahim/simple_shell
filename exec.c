@@ -45,4 +45,5 @@ void exec(char *u_input)
 		waitpid(child_process, &status, WUNTRACED);
 		} while (!WIFEXITED(status) && !WIFSIGNALED(status));
 	}
+	free(argv);
 }
