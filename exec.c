@@ -11,7 +11,7 @@ void exec(char *u_input)
 	char *text, **argv, *tmp_cmd = NULL, *last_cmd = NULL;
 
 	text = strtok(u_input, " ");
-	argv = malloc(sizeof(char *) * 120);
+	argv = malloc(sizeof(char *) * 100);
 	while (text != NULL)
 	{
 		argv[argc] = text;
@@ -36,7 +36,6 @@ void exec(char *u_input)
 		{
 			fprintf(stderr, "%s: ", argv[0]);
 			fprintf(stderr, "No such file or directory\n");
-			free(argv);
 			exit(EXIT_FAILURE);
 		}
 	}
