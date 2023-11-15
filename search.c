@@ -8,10 +8,11 @@
 char *search(char *tmp_cmd)
 {
 	struct stat b;
+	size_t len = 1024;
 	char *oldPth, *oldPth_dup, *token, *newPth;
 
 	oldPth = getenv("PATH");
-	if (oldPth)
+	if (oldPth != NULL)
 	{
 		oldPth_dup = strdup(oldPth);
 		token = strtok(oldPth_dup, ":");
@@ -23,10 +24,10 @@ char *search(char *tmp_cmd)
 				free(newPth);
 				return (NULL);
 			}
-			strcpy(newPth, token);
-			strcat(newPth, "/");
-			strcat(newPth, tmp_cmd);
-			strcat(newPth, "\0");
+			strncpy(newPth, token, len - 1);
+			newPth[len - 1] = '\0';
+			strncat(newPth, "/", len - strlen(newPth) - 1);
+			strncat(newPth, tmp_cmd, len - strlen(newPth) - 1);
 			if (stat(newPth, &b) == 0)
 			{
 				free(oldPth_dup);
