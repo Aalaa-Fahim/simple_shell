@@ -11,7 +11,7 @@ void exec(char *u_input)
 	char *text, **argv, *tmp_cmd = NULL, *last_cmd = NULL;
 
 	text = strtok(u_input, " ");
-	argv = malloc(sizeof(char *) * 1024);
+	argv = malloc(sizeof(char *) * 120);
 	while (text != NULL)
 	{
 		argv[argc] = text;

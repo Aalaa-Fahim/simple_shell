@@ -14,7 +14,7 @@ void prompt(void)
  */
 int main(void)
 {
-	char u_input[1024];
+	char u_input[120];
 
 	if (isatty(STDIN_FILENO))
 	{
